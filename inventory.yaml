@@ -1,0 +1,18 @@
+vmgroup1:
+  hosts:
+    vm_001:
+      ansible_host: 192.168.64.4
+    vm_002:
+      ansible_host: 192.168.64.5
+  vars:
+    ansible_user: ubuntu
+
+virtualmachines:
+  children:
+    vmgroup1:
+    vmgroup2:
+
+webservers:
+  hosts:
+    webserver_001:
+      ansible_host: 192.168.64.4

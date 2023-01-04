@@ -1,0 +1,8 @@
+- name: Configure webserver with nginx
+  hosts: webservers
+  become: True
+  tasks:
+    - name: install nginx
+      apt: name=nginx update_cache=yes
+  vars:
+    ansible_user: ubuntu
